@@ -27,7 +27,8 @@ const AdminLogin = () => {
     if (!form.email || !form.password) { setError("Please fill all fields"); return; }
     setLoading(true); setError("");
     try {
-      const res = await axios.post("http://localhost:8000/api/admin/login", form, { withCredentials: true });
+      const res = await axios.post("https://tutorconnect-3-dpps.onrender.com
+/api/admin/login", form, { withCredentials: true });
       if (res.data.success) {
         navigate("/admin-dashboard");
       } else {
