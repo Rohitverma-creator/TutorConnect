@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ShieldCheck, Mail, Lock, LogIn } from "lucide-react";
+import { backendUrl } from "../../App";
 
 const AdminLogin = () => {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -23,25 +24,53 @@ const AdminLogin = () => {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleLogin = async () => {
-    if (!form.email || !form.password) { setError("Please fill all fields"); return; }
-    setLoading(true); setError("");
-    try {
-      const res = await axios.post("https://tutorconnect-3-dpps.onrender.com
-/api/admin/login", form, { withCredentials: true });
-      if (res.data.success) {
-        navigate("/admin-dashboard");
-      } else {
-        setError(res.data.message || "Login failed");
-        gsap.fromTo(cardRef.current, { x: -10 }, { x: 0, duration: 0.4, ease: "elastic.out(1,0.3)" });
-      }
-    } catch {
-      setError("Invalid credentials. Please try again.");
-      gsap.fromTo(cardRef.current, { x: -10 }, { x: 0, duration: 0.4, ease: "elastic.out(1,0.3)" });
-    } finally {
-      setLoading(false);
+const handleLogin = async () => {
+  if (!form.email || !form.password) {
+    setError("Please fill all fields");
+    return;
+  }
+
+  setLoading(true);
+  setError("");
+
+  try {
+    const res = await axios.post(
+      `${backendUrl}/api/admin/login`,
+      form,
+      { withCredentials: true }
+    );
+
+    if (res.data.success) {
+      navigate("/admin-dashboard");
+    } else {
+      setError(res.data.message || "Login failed");
+
+      gsap.fromTo(
+        cardRef.current,
+        { x: -10 },
+        {
+          x: 0,
+          duration: 0.4,
+          ease: "elastic.out(1,0.3)",
+        }
+      );
     }
-  };
+  } catch (error) {
+    setError("Invalid credentials. Please try again.");
+
+    gsap.fromTo(
+      cardRef.current,
+      { x: -10 },
+      {
+        x: 0,
+        duration: 0.4,
+        ease: "elastic.out(1,0.3)",
+      }
+    );
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleKeyDown = (e) => { if (e.key === "Enter") handleLogin(); };
 
