@@ -39,7 +39,7 @@ import Payment from "./pages/admin/Payment";
 import Feedbacks from "./pages/admin/Feedback";
 import SmartTutor from "./pages/SmartTutor";
 
-export const backendUrl = "https://tutorconnect-3-dpps.onrender.com
+export const backendUrl = "https://tutorconnect-3-dpps.onrender.com"
 ";
 
 const App = () => {
