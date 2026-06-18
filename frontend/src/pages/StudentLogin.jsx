@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { setUserData } from "../redux/userSlice";
+import { backendUrl } from "../App";
 
 function StudentLogin() {
   const cardRef = useRef();
@@ -15,7 +16,7 @@ function StudentLogin() {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-export const backendUrl = "https://tutorconnect-3-dpps.onrender.com";
+
 
 
   useEffect(() => {
