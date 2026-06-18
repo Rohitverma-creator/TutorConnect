@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const backendUrl = "http://localhost:8000";
+  export const backendUrl = "https://tutorconnect-3-dpps.onrender.com";
+
 
   const handleLogout = async () => {
     try {
