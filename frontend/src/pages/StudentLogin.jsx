@@ -15,7 +15,8 @@ function StudentLogin() {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const backendUrl = "http://localhost:8000";
+export const backendUrl = "https://tutorconnect-3-dpps.onrender.com";
+
 
   useEffect(() => {
     gsap.set([cardRef.current, ".reveal"], {
