@@ -1,7 +1,10 @@
 import React from "react";
 import { FaUsers, FaChalkboardTeacher, FaClock, FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 const About = () => {
+  const navigate = useNavigate()
   return (
     <section className="max-w-7xl mx-auto px-6 py-16">
       <div className="text-center mb-20">
@@ -28,12 +31,13 @@ const About = () => {
             <li>✔ Earn While Making an Impact</li>
           </ul>
 
-          <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+          <button onClick={()=>navigate("/tutor-register")}
+          className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
             Become a Tutor
           </button>
         </div>
 
-        <div className="bg-gray-50 p-8 rounded-2xl shadow-md">
+        <div className="p-8 rounded-2xl shadow-md">
           <h4 className="text-xl font-semibold text-gray-800 mb-4">
             Do You Have Formal Teaching Experience?
           </h4>

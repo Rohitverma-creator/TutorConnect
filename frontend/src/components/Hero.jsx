@@ -31,23 +31,35 @@ const Hero = () => {
             results, flexibility, and growth.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              to="/register"
-              className="px-7 py-3 rounded-full border border-white text-white hover:bg-white hover:text-[#0f4c53] transition"
-            >
-              Register Now
-            </Link>
+    <div className="mt-10 flex flex-wrap gap-4">
+  <Link
+    to="/emergency"
+    className="px-7 py-3 rounded-full border border-white text-white hover:bg-white hover:text-[#0f4c53] transition"
+  >
+    Instant Tutor
+  </Link>
 
-            <Link
-              to="/book"
-              className="px-7 py-3 rounded-full bg-lime-400 text-[#0f4c53] font-semibold hover:bg-lime-300 transition"
-            >
-              Book Session
-            </Link>
-          </div>
+  <Link
+    to="/tutor"
+    className="px-7 py-3 rounded-full bg-lime-400 text-[#0f4c53] font-semibold hover:bg-lime-300 transition"
+  >
+    Book Session
+  </Link>
+
+  <Link
+    to="/smart-tutor"
+    className="px-7 py-3 rounded-full bg-white text-[#0f4c53] font-semibold hover:bg-gray-200 transition"
+  >
+    🤖 Smart Tutor
+  </Link>
+</div>
+
+    
         </div>
+            
       </div>
+
+      
     </section>
   );
 };
