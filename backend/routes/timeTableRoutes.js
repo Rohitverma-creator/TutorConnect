@@ -2,7 +2,7 @@ import express from "express";
 import { 
   generateTimetable, 
   getMyTimetables 
-} from "../controllers/timetableControllers.js";
+} from "../controllers/timeTableControllers.js";
 import { authUser } from "../middlewares/auth.js";
 
 const timeTableRouter = express.Router();
