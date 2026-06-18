@@ -3,7 +3,7 @@ import {
   createFeedback,
   getTutorFeedback,
   getAverageRating,
-} from "../controllers/feedbackController.js";
+} from "../controllers/feedBackController.js";
 import {authUser} from "../middlewares/auth.js";
 
 const feedBackRouter = express.Router();
